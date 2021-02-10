@@ -50,22 +50,22 @@
         /// The OnEntityKilled.
         /// </summary>
         /// <param name="e">The e<see cref="EntityKilledEvent"/>.</param>
-        /*[EventHandler]
+        [EventHandler]
         public void OnEntityKilled(EntityKilledEvent e)
         {
-            //Fix some bugs
             if (!(e.Entity is OpenPlayer))
                 return;
             var player = (OpenPlayer)e.Entity;
             e.SetCancelled(true);
-            if (player.Level.KeepInventory)
+            if (!player.Level.KeepInventory)
                 player.DropInventory();
             player.HealthManager.Health = player.HealthManager.MaxHealth;
+            //Rewriting the death only for this line lol..
             player.Teleport(player.Level.SpawnPoint);
             player.RemoveAllEffects();
             player.HungerManager.Hunger = player.HungerManager.MaxHunger;
             //Yeah i should do better messages
-            Plugin.BroadcastMessage($"{player.Username} is dead");
-        }*/
+            //Plugin.BroadcastMessage($"{player.Username} is dead");
+        }
     }
 }
