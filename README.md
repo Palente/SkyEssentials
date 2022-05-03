@@ -1,2 +1,2 @@
 # SkyEssentials
-SkyEssentials is a OpenMiNET aiming to add essentials utility to OpenMiNET
+SkyEssentials is an [OpenMiNET](https://github.com/OpenMiNET/OpenMiNET) plugin aimed to add essentials utility to OpenMiNET

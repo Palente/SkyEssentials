@@ -59,6 +59,7 @@
             api.CommandManager.LoadCommands(new EffectCommand(this));
             api.CommandManager.LoadCommands(new SpawnCommand(this));
             api.CommandManager.LoadCommands(new GamemodeCommand(this));
+            api.CommandManager.LoadCommands(new TestCommand(this));
 
             api.EventDispatcher.RegisterEvents(Events);
             Api = api;
@@ -110,80 +111,33 @@
         //it took me a year to do it... just because we can not create a new instance of Effect ...
         public static Effect? GetEffect(EffectType type)
         {
-            Effect effect = null;
-            switch (type)
+            return type switch
             {
-                case EffectType.Speed:
-                    effect = new Speed();
-                    break;
-                case EffectType.Slowness:
-                    effect = new Slowness();
-                    break;
-                case EffectType.Haste:
-                    effect = new Haste();
-                    break;
-                case EffectType.MiningFatigue:
-                    effect = new MiningFatigue();
-                    break;
-                case EffectType.Strength:
-                    effect = new Strength();
-                    break;
-                case EffectType.InstantHealth:
-                    effect = new InstantHealth();
-                    break;
-                case EffectType.InstantDamage:
-                    effect = new InstantDamage();
-                    break;
-                case EffectType.JumpBoost:
-                    effect = new JumpBoost();
-                    break;
-                case EffectType.Nausea:
-                    effect = new Nausea();
-                    break;
-                case EffectType.Regeneration:
-                    effect = new Regeneration();
-                    break;
-                case EffectType.Resistance:
-                    effect = new Resistance();
-                    break;
-                case EffectType.FireResistance:
-                    effect = new FireResistance();
-                    break;
-                case EffectType.WaterBreathing:
-                    effect = new WaterBreathing();
-                    break;
-                case EffectType.Invisibility:
-                    effect = new Invisibility();
-                    break;
-                case EffectType.Blindness:
-                    effect = new Blindness();
-                    break;
-                case EffectType.NightVision:
-                    effect = new NightVision();
-                    break;
-                case EffectType.Hunger:
-                    effect = new Hunger();
-                    break;
-                case EffectType.Weakness:
-                    effect = new Weakness();
-                    break;
-                case EffectType.Poison:
-                    effect = new Poison();
-                    break;
-                case EffectType.Wither:
-                    effect = new Wither();
-                    break;
-                case EffectType.HealthBoost:
-                    effect = new HealthBoost();
-                    break;
-                case EffectType.Absorption:
-                    effect = new Absorption();
-                    break;
-                case EffectType.Saturation:
-                    effect = new Saturation();
-                    break;
-            }
-            return effect;
+                EffectType.Speed => new Speed(),
+                EffectType.Slowness => new Slowness(),
+                EffectType.Haste => new Haste(),
+                EffectType.MiningFatigue => new MiningFatigue(),
+                EffectType.Strength => new Strength(),
+                EffectType.InstantHealth => new InstantHealth(),
+                EffectType.InstantDamage => new InstantDamage(),
+                EffectType.JumpBoost => new JumpBoost(),
+                EffectType.Nausea => new Nausea(),
+                EffectType.Regeneration => new Regeneration(),
+                EffectType.Resistance => new Resistance(),
+                EffectType.FireResistance => new FireResistance(),
+                EffectType.WaterBreathing => new WaterBreathing(),
+                EffectType.Invisibility => new Invisibility(),
+                EffectType.Blindness => new Blindness(),
+                EffectType.NightVision => new NightVision(),
+                EffectType.Hunger => new Hunger(),
+                EffectType.Weakness => new Weakness(),
+                EffectType.Poison => new Poison(),
+                EffectType.Wither => new Wither(),
+                EffectType.HealthBoost => new HealthBoost(),
+                EffectType.Absorption => new Absorption(),
+                EffectType.Saturation => new Saturation(),
+                _ => null,
+            };
         }
     }
 }

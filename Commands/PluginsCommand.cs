@@ -38,6 +38,8 @@
             {
                 result += $"{(plugin.Enabled ? "§a" : "§c")}{plugin.Info.Name} §ev{plugin.Info.Version}§f, ";
             }
+            //used to remove the ", " at the end
+            result = result.Remove(result.Length - 2);
             player.SendMessage(result);
         }
 
@@ -66,7 +68,7 @@
                 player.SendMessage("This plugin doesn't exist!");
                 return;
             }
-            player.SendMessage($"§a{plugin.Info.Name} §e<{plugin.Info.Version}> §fMade By §3{plugin.Info.Author}");
+            player.SendMessage($"§a{plugin.Info.Name} §e<{plugin.Info.Version}> §fAuthor: §3{plugin.Info.Author}");
         }
     }
 }

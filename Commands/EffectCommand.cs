@@ -1,15 +1,10 @@
 ﻿using MiNET.Effects;
 using MiNET.Plugins.Attributes;
 using OpenAPI.Player;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SkyEssentials.Commands
 {
-    //Effects are fucked, you still get the effect even after the time passed, clear doesnt work
+    //Effects don't work correctly, you still get the effect even after the time passed, clear doesnt work too
     class EffectCommand
     {
         private readonly SkyEssentials Plugin;

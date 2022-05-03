@@ -15,7 +15,8 @@
         [Command(Description = "test")]
         public void Test(OpenPlayer player)
         {
-            player.SendMessage("{text:\"Click.\",clickEvent:{action:open_url,value:\"http://stackoverflow.com/q/34635271\"}}", type: MiNET.MessageType.Raw);
+            //TODO: Make it work
+
         }
     }
 }
